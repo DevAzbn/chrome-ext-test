@@ -1,0 +1,6 @@
+.azbn-ext {
+	
+}
+.azbn-ext:after {
+	content: "__MSG_mode_enable__";
+}

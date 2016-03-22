@@ -5,8 +5,22 @@ var AzbnExt = function(param) {
 	var ctrl = this;
 	
 	this.setTab = function(name, url, tab) {
-		ctrl.__tabs[name] = {};
+		if(ctrl.__tabs[name]) {
+			
+		} else {
+			ctrl.__tabs[name] = {};
+		}
 		ctrl.__tabs[name][url] = tab;
+	};
+	
+	this.unsetTab = function(name, url, tab) {
+		if(ctrl.__tabs[name]) {
+			if(ctrl.__tabs[name][url]) {
+				delete ctrl.__tabs[name][url];
+			}
+		} else {
+			
+		}
 	};
 	
 	this.getTab = function(name, url) {

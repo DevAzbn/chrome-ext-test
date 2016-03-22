@@ -17,6 +17,11 @@ var background_onMessage = function(tab, url, msg) {
 			}
 			break;
 			
+			case 'ping':{
+				tab.postMessage({action:'pong',});
+			}
+			break;
+			
 			default: {
 				
 			}

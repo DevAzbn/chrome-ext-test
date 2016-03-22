@@ -8,6 +8,7 @@
 	
 	"permissions": [
 		"activeTab",
+		"tabs",
 		"browsingData",
 		"storage",
 		"contextMenus",
@@ -37,7 +38,7 @@
 	},
 	
 	"background": {
-		"scripts": ["js/azbn/AzbnExt.js", "js/azbn/AzbnExtCfg.js", "js/background/background_onMessage.js", "js/background/default.js"],
+		"scripts": ["js/azbn/AzbnExt.js", "js/azbn/AzbnExtCfg.js", "js/background/background_onMessage.js", "js/background/background_onAlarm.js", "js/background/default.js"],
 		"persistent": false
 	}
 }

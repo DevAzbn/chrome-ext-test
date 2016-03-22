@@ -13,6 +13,11 @@ var content_onMessage = function(bg, url, msg) {
 			}
 			break;
 			
+			case 'ping':{
+				bg.postMessage({action:'pong',});
+			}
+			break;
+			
 			default: {
 				
 			}

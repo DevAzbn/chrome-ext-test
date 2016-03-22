@@ -34,12 +34,16 @@ var AzbnExt = function(param) {
 	};
 	
 	this.notify = function(notify) {
-		var notification = webkitNotifications.createNotification(
-			'img/logo.png',
-			notify.title,
-			notify.preview
-		);
-		notification.show(); //отображение уведомления
+		//https://developer.chrome.com/apps/notifications#type-NotificationOptions
+		chrome.notifications.create(AzbnExtCfg.id, {
+			type : 'basic',
+			iconUrl : 'img/logo.png',
+			title : notify.title,
+			message : notify.preview,
+			isClickable : true,
+		}, function(n_id){
+			
+		});
 	}
 	
 }

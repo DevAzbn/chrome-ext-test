@@ -4,6 +4,11 @@ var background_onMessage = function(tab, url, msg) {
 	
 	if(msg.action) {
 		
+		Azbn.notify({
+			title : AzbnExtCfg.id,
+			preview : msg.action,
+		});
+		
 		switch(msg.action) {
 			
 			case 'document.ready':{

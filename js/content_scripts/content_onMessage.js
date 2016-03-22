@@ -4,13 +4,6 @@ var content_onMessage = function(bg, url, msg) {
 	
 	if(msg.action) {
 		
-		/*
-		Azbn.notify({
-			title : AzbnExtCfg.id,
-			preview : msg.action,
-		});
-		*/
-		
 		switch(msg.action) {
 			
 			case 'welcome':{

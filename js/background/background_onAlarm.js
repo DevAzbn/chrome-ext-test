@@ -1,8 +1,8 @@
 var background_onAlarm = function(alarm) {
 	
-	console.log(msg);
+	//console.log(alarm);
 	
-	if(alarm.name) {
+	if(alarm.name != '') {
 		
 		switch(alarm.name) {
 			
@@ -14,10 +14,29 @@ var background_onAlarm = function(alarm) {
 						for(var tab in _n) {
 							var _t = _n[tab];
 							
-							t.postMessage({action:'ping',});
+							_t.postMessage({
+								action : 'ping',
+							});
 						}
 					}
 				}
+				
+			}
+			break;
+			
+			case 'req2server':{
+				
+				$.getJSON(AzbnExtCfg.server_api,
+					{
+						app_key : AzbnExtCfg.server_api_key,
+						service : 'online',
+						method : 'check',
+						check : 'test',
+					},
+					function(data){
+						console.log(data);
+					}
+				);
 				
 			}
 			break;

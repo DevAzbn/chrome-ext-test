@@ -24,21 +24,29 @@ chrome.runtime.onConnect.addListener(function(tab) {
 });
 
 
-/*
+
 chrome.alarms.onAlarm.addListener(function(alarm) {
 	//if (alarm.name == 'noti') {}
 	background_onAlarm(alarm);
 });
  
-chrome.alarms.create('ping', { 
+chrome.alarms.create('ping', {
 	delayInMinutes: 0.1,
 	periodInMinutes: 1,
 });
-*/
+
+chrome.alarms.create('req2server', {
+	delayInMinutes: 0.2,
+	periodInMinutes: 1,
+});
+
 
 
 
 /*
+код для создания скриншота
+для использования удалить popup из манифеста
+
 chrome.browserAction.onClicked.addListener(function(tab) {
 	//chrome.tabs.executeScript(tab.id, {
 	//	code: "(" + bg_test.toString() + ")();"

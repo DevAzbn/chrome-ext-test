@@ -8,10 +8,10 @@
 	"browser_action": {
 		"message": "Какое-то действие при щелчке"
 	},
-	"mode_enable": {
-		"message": "Енабле"
+	"azbn_test": {
+		"message": "azbn_test"
 	},
-	"mode_disable": {
-		"message": "Дисабле"
+	"azbn_background_init": {
+		"message": "Расширение инициализированно"
 	}
 }

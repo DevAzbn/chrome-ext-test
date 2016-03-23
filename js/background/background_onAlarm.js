@@ -26,7 +26,7 @@ var background_onAlarm = function(alarm) {
 			
 			case 'req2server':{
 				
-				$.getJSON(AzbnExtCfg.server_api,
+				$.post(AzbnExtCfg.server_api,
 					{
 						app_key : AzbnExtCfg.server_api_key,
 						service : 'online',

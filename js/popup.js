@@ -15,4 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
 $(document).ready(function(){
 	//alert('test');
 	console.log('Azbn Ext Init');
+	
+	chrome.tabs.getSelected(null, function(tab){
+		$('.activeTab-url').html(tab.url);
+	});
 });

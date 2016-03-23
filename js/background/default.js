@@ -23,7 +23,14 @@ chrome.runtime.onConnect.addListener(function(tab) {
 	}
 });
 
-
+chrome.tabs.onActivated.addListener(function(activeInfo){
+	chrome.tabs.getSelected(null, function(tab){
+		Azbn.notify({
+			title : AzbnExtCfg.id,
+			preview : tab.url,
+		});
+	});
+});
 
 chrome.alarms.onAlarm.addListener(function(alarm) {
 	//if (alarm.name == 'noti') {}
@@ -39,6 +46,13 @@ chrome.alarms.create('req2server', {
 	delayInMinutes: 0.2,
 	periodInMinutes: 1,
 });
+
+/*
+chrome.alarms.create('showActiveTab', {
+	delayInMinutes: 0.3,
+	periodInMinutes: 1,
+});
+*/
 
 
 

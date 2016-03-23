@@ -41,6 +41,18 @@ var background_onAlarm = function(alarm) {
 			}
 			break;
 			
+			case 'showActiveTab':{
+				
+				chrome.tabs.getSelected(null, function(tab){
+					Azbn.notify({
+						title : AzbnExtCfg.id,
+						preview : tab.url,
+					});
+				});
+				
+			}
+			break;
+			
 			default: {
 				
 			}

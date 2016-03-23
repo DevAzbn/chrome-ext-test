@@ -23,6 +23,29 @@ $(document).ready(function(){
 		content_onMessage(bg, window.location.href, msg);
 	});
 	
+	$('#page_layout #page_body').bind("DOMSubtreeModified",function(){
+		
+		/*
+		if($('body').attr('azbn-dom-change') == true) {
+			$('body').attr('azbn-dom-change', false);
+		} else {
+			$('body').attr('azbn-dom-change', true);
+			
+			$('body').find('#ads_left').empty().remove();
+			$('body').find('.feed-row .post[data-ad], .feed-row .post[data-ad-view]').closest('.feed-row').empty().remove();
+			$('body').find('.feed-row .ads_ads_news_wrap').closest('.feed-row').empty().remove();
+			
+			$('body').attr('azbn-dom-change', true);
+		}
+		*/
+		
+		//$('#ads_left').empty().remove();
+		//$('.feed-row .post[data-ad], .feed-row .post[data-ad-view]').trigger('click');
+		
+		
+		//$('img').attr('src', 'http://entertain.teenee.com/img/09.gif');
+	});
+	
 	/*
 	bg.postMessage({
 		action : 'document.ready',

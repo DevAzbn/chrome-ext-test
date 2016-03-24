@@ -21,8 +21,14 @@
 	"content_scripts": [
 		{
 			"matches": ["*://*/*"],
+			"run_at": "document_start",
+			"js": ["js/azbn/AzbnExt.js", "js/jquery/jquery.min.js", "js/azbn/AzbnExtCfg.js", "js/content_scripts/content_onMessage.js", "js/content_scripts/document_start.js"],
+			"css": ["css/content_scripts/default.css"]
+		},
+		{
+			"matches": ["*://*/*"],
 			"run_at": "document_end",
-			"js": ["js/azbn/AzbnExt.js", "js/jquery/jquery.min.js", "js/azbn/AzbnExtCfg.js", "js/content_scripts/content_onMessage.js", "js/content_scripts/default.js"],
+			"js": ["js/azbn/AzbnExt.js", "js/jquery/jquery.min.js", "js/azbn/AzbnExtCfg.js", "js/content_scripts/content_onMessage.js", "js/content_scripts/document_end.js"],
 			"css": ["css/content_scripts/default.css"]
 		}
 	],

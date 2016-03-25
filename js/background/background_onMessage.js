@@ -13,7 +13,6 @@ var background_onMessage = function(tab, url, msg) {
 			
 			case 'document.ready':{
 				console.log('Page ' + url + ' is ready');
-				//chrome.browserAction.setBadgeText({text : '' + Azbn.lenTab(AzbnExtCfg.id),});
 			}
 			break;
 			

@@ -5,7 +5,6 @@ chrome.runtime.onConnect.addListener(function(tab) {
 	var tab_arr = tab.name.split('@');
 	
 	if(tab_arr[0] == AzbnExtCfg.id) {
-		//console.log('connected by filter ' + tab.name);
 		
 		Azbn.setTab(tab_arr[0], tab_arr[1], tab);
 		
@@ -18,8 +17,6 @@ chrome.runtime.onConnect.addListener(function(tab) {
 		});
 		
 		tab.postMessage({action:'welcome',});
-		
-		//chrome.tabs.highlight({tabs : tab.id}, function(window){});
 	}
 });
 

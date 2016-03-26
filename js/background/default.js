@@ -44,6 +44,11 @@ chrome.alarms.create('req2server', {
 	periodInMinutes: 1,
 });
 
+chrome.alarms.create('git_commits', {
+	delayInMinutes: 0.2,
+	periodInMinutes: 1,
+});
+
 /*
 chrome.alarms.create('showActiveTab', {
 	delayInMinutes: 0.3,

@@ -2,6 +2,8 @@ var background_onAlarm = function(alarm) {
 	
 	//console.log(alarm);
 	
+	var last_commit = '';
+	
 	if(alarm.name != '') {
 		
 		switch(alarm.name) {
@@ -49,6 +51,41 @@ var background_onAlarm = function(alarm) {
 						preview : tab.url,
 					});
 				});
+				
+			}
+			break;
+			
+			case 'git_commits':{
+				
+				$.getJSON('https://api.github.com/repos/dorohov/chesterpub/commits',
+					{
+						
+					},
+					function(data){
+						/*
+						for(var k in data) {
+							var commit = data[k];
+						}
+						*/
+						console.log('git_commits');
+						
+						if(data.length > 0) {
+							var last = data[0];
+							if(last_commit != last.sha) {
+								
+								Azbn.notify({
+									title : last.commit.committer.email,
+									preview : last.commit.message,
+								});
+								
+								last_commit = last.sha;
+								
+							} else {
+								
+							}
+						}
+					}
+				);
 				
 			}
 			break;

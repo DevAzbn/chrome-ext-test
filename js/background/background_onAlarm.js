@@ -71,7 +71,7 @@ var background_onAlarm = function(alarm) {
 						
 						if(data.length > 0) {
 							var last = data[0];
-							if(last_commit != last.sha) {
+							if(last.sha.indexOf(last_commit) > -1) {
 								
 								Azbn.notify({
 									title : last.commit.committer.email,

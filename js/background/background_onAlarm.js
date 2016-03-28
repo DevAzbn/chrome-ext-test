@@ -2,7 +2,7 @@ var background_onAlarm = function(alarm) {
 	
 	//console.log(alarm);
 	
-	var last_commit = '';
+	var last_commit = {};
 	
 	if(alarm.name != '') {
 		
@@ -62,27 +62,25 @@ var background_onAlarm = function(alarm) {
 						
 					},
 					function(data){
-						/*
-						for(var k in data) {
-							var commit = data[k];
-						}
-						*/
-						console.log('git_commits');
+						
+						//console.log('git_commits');
 						
 						if(data.length > 0) {
 							var last = data[0];
-							if(last.sha.indexOf(last_commit) > -1) {
+							
+							if(last_commit[last.sha]) {
+								
+							} else {
 								
 								Azbn.notify({
 									title : last.commit.committer.email,
 									preview : last.commit.message,
 								});
 								
-								last_commit = last.sha;
-								
-							} else {
+								last_commit[last.sha] = last;
 								
 							}
+							
 						}
 					}
 				);

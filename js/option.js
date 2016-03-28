@@ -1,3 +1,17 @@
+var storage = chrome.storage.local;
+
+/*
+pb = {}; 
+pb.addBlock = function (value) {
+	storage.get('block', function (item) {
+		item = item.block || [];
+//тут я и попался переменная item ссылается на объект 'block' в котором будет массив, а не сам массив
+		item.push(value);
+//.push() на объект как раз и выкинет в следствии ту ошибку
+		storage.set({block: item});
+	});
+	};
+*/
 
 $(document).ready(function(){
 	
